@@ -1,2 +1,2 @@
-web: gunicorn cs108.wsgi --log- installfile -
+web: gunicorn cs108.wsgi --log-file -
 
