@@ -12,9 +12,9 @@ def homePageView(request):
     <h1> Hello, world! </h1>
     <p>
     This is our first Django web application!
-    <p/>
+    </p>
     This page was generated at %s
-    <html.
+    </html>
     
     
     '''% time.ctime()
