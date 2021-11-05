@@ -1,0 +1,32 @@
+
+
+<html>
+
+    <h1>Showing All Profiles</h1>
+
+    {% for quote in profiles %}
+
+    <table>
+        <tr>
+            <td>{{mini_fb.first_name}} {{mini_fb.last_name}}</td>
+            <td>{{mini_fb.city}}</td>
+            <td>{{mini_fb.profile_img_url}}</td>
+        </tr>
+    </table>
+
+
+
+    {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
