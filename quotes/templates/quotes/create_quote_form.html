@@ -1,0 +1,11 @@
+
+<h1>Create a quote</h1>
+
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    {{form}}
+    <input type="submit" value="Add a quote!">
+</form>
