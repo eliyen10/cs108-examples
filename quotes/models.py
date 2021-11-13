@@ -1,4 +1,6 @@
 from django.db import models
+import random
+
 
 class Person(models.Model):
     '''Encapsulate the concept of a person, who said some famous quote.'''
@@ -8,7 +10,25 @@ class Person(models.Model):
     def __str__(self):
         '''Return a string representaton of this Person.'''
         return self.name
-      
+
+    def get_random_image(self):
+        '''return an image of this person selected at random'''
+
+        images = Image.objects.filter(person = self)
+
+        return random.choice(images)
+
+    def get_all_quotes(self):
+        '''Returns all quotes for this person'''
+
+        return Quote.objects.filter(person = self)
+
+    def images(self):
+        '''Returns all images for this person'''
+
+        return Image.objects.filter(person = self)
+
+
 class Quote(models.Model):
     '''Encapsulate the idea of a quote (i.e., text).'''
 
