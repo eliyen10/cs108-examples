@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 import random
 
 
@@ -24,7 +25,7 @@ class Person(models.Model):
         return Quote.objects.filter(person = self)
 
     def images(self):
-        '''Returns all images for this person'''
+        '''Returns all images  for this person'''
 
         return Image.objects.filter(person = self)
 
@@ -38,7 +39,12 @@ class Quote(models.Model):
 
     def __str__(self):
         '''Return a string representation of this Quote object.'''
-        return f'"{self.text}" - {self.person}'
+        return f'"{self.text}" - {self.person.name}'
+
+    def get_absolute_url(self):
+        ''''''
+        # 'quote/<int:pk>'
+        return reverse('quote', kwargs={'pk':self.pk})
 
 class Image(models.Model):
     '''Represent an image, which is associated with a Person.'''
