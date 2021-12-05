@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'quotes.apps.QuotesConfig',
     'mini_fb.apps.MiniFbConfig',
+    'cooking_forum.apps.CookingForumConfig',
     
 ]
 
