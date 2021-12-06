@@ -63,6 +63,7 @@ TEMPLATES = [
         'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
+            
             'string_if_invalid': "NameError: the variable [%s] is not defined!!",
             'context_processors': [
                 'django.template.context_processors.debug',

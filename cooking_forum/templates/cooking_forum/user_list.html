@@ -1,0 +1,20 @@
+<!-- <center>
+    <h1>{{User.recipes}}</h1>
+    <h3>{{User.person}}</h3>
+    <img src="{{user.img_url }}" style="max-width: 400;">
+</center> -->
+
+<!-- <h1>Look At All These Recipes!!</h1>
+<ul>
+{% for user in users %}
+
+<li>{{users}}</li>
+
+{% endfor %}
+</ul> -->
+
+<center>
+    <h1>{{user.recipes}}</h1>
+    <h3>{{user.person}}</h3>
+    <img src="{{user.person.get_random_recipe}}" style="max-width: 400;">
+</center>

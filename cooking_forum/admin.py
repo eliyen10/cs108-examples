@@ -1,4 +1,3 @@
-from cooking_forum.models import User
 from django.contrib import admin
 
 
