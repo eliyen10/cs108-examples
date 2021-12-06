@@ -20,26 +20,17 @@ class Person(models.Model):
 
         return random.choice(images)
 
-    # def get_all_quotes(self):
-    #     '''Returns all quotes for this person'''
 
-    #     return Quote.objects.filter(person = self)
-
-    # def images(self):
-    #     '''Returns all images  for this person'''
-
-    #     return Image.objects.filter(person = self)
-
-class User(models.Model):
+class Recipe(models.Model):
     '''shows the users and a recipe that they've created'''
-    recipes = models.TextField(blank=True) # text
+    ingredients = models.TextField(blank=True) # text
     person = models.ForeignKey(Person, on_delete=models.CASCADE)
-    # username = models.TextField(blank=True) # author
-    # image_url = models.URLField(blank=True) 
+    recipe_name = models.TextField(blank=True)
+    
 
     def __str__(self):
         
-        return f"{self.recipes} - {self.person}"
+        return f"{self.ingredients} - {self.person}"
 
     def get_absolute_url(self):
         '''provide a URL to show in this object'''
