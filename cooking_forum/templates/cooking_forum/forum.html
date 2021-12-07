@@ -1,6 +1,7 @@
 {% extends 'cooking_forum/base.html' %}
 
 {% block content %}
+<body background="https://t3.ftcdn.net/jpg/01/24/86/78/360_F_124867876_wIbQUsnu1ApZlYxmY8WrkEfMIbj6ZOrL.jpg">
 
 <center>
     <h1>{{recipe.recipe_name}}</h1>
@@ -9,5 +10,5 @@
     <img src="{{recipe.image_url}}" style="max-width: 400;">
     <h4><a href="{% url 'update_recipe' recipe.pk %}">Update This Quote</a></h4>
 </center>
-
+</body>
 {% endblock %}
