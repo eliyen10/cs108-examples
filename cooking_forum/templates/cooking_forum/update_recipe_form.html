@@ -1,9 +1,10 @@
-{% extends 'quotes/base.html' %}
+ 
+{% extends 'cooking_forum/base.html' %}
 
 {% block content %}
 
 <!-- templates/create_quote_form.html -->
-<h1>Update A Quote</h1>
+<h1>Update A Recipe</h1>
 
 <form method="POST"> <!-- HTTP POST to send data to the server -->
     {% csrf_token %}
@@ -16,9 +17,10 @@
     {{form.as_table}} <!-- table-style formatting -->
     <tr>
         <td></td> <!-- empty! -->
-        <td><input type="submit" value="Update A Quote!"></td>
+        <td><input type="submit" value="Update A Recipe!"></td>
     </tr>
     </table>
 
 </form>
 {% endblock %}
+

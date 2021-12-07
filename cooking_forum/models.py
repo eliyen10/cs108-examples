@@ -26,11 +26,12 @@ class Recipe(models.Model):
     ingredients = models.TextField(blank=True) # text
     person = models.ForeignKey(Person, on_delete=models.CASCADE)
     recipe_name = models.TextField(blank=True)
+    image_url = models.URLField(blank=True)
     
 
     def __str__(self):
         
-        return f"{self.ingredients} - {self.person}"
+        return f"{self.recipe_name} - {self.ingredients} - {self.person}"
 
     def get_absolute_url(self):
         '''provide a URL to show in this object'''

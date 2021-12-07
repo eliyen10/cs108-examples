@@ -1,5 +1,27 @@
 <!--cooking_forum/home.html-->
+{% extends 'cooking_forum/base.html' %}
+
+{% block content %}
 
 <h1>Show all Recipes</h1>
 
-{{users}}
+<ul>
+    {% for recipe in recipes %}
+    <table>
+
+    <tr>  
+    <td>
+    <li>"{{recipe.recipe_name}}" - {{recipe.person}}<br>
+        <img src="{{recipe.image_url}}" style="max-width: 400;">
+    </li>
+    </td>
+     
+
+    
+    <td>{{recipe.ingredients}}</td>
+    </tr>
+    </table>    
+    {% endfor %}
+</ul>
+
+{% endblock %}

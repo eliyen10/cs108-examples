@@ -8,4 +8,11 @@ class CreateRecipeForm(forms.ModelForm):
 
     class Meta:
         model = Recipe
-        fields = ['ingredients', 'person'] 
+        fields = ['recipe_name', 'ingredients', 'person', 'image_url'] 
+
+class UpdateRecipeForm(forms.ModelForm):
+    '''Updates an existing recipe.'''
+
+    class Meta:
+        model = Recipe
+        fields = ['recipe_name', 'ingredients', 'person', 'image_url'] 
