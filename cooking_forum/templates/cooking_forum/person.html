@@ -1,0 +1,45 @@
+<!-- cooking_forum/home.html
+{% extends 'cooking_forum/base.html' %}
+
+{% block content %}
+<body background="https://t3.ftcdn.net/jpg/01/24/86/78/360_F_124867876_wIbQUsnu1ApZlYxmY8WrkEfMIbj6ZOrL.jpg">
+<h1>Show all Recipes</h1>
+
+<ul>
+    {% for recipe in recipes %}
+    <table>
+        {if }
+    <tr>  
+    <td>
+    <li>"{{recipe.recipe_name}}" - {{recipe.person}}<br>
+        <img src="{{recipe.image_url}}" style="max-width: 400;">
+    </li>
+    </td>
+     
+
+    
+    <td style="color: gray;">{{recipe.ingredients}}</td>
+    </tr>
+    </table>    
+    {% endfor %}
+</ul>
+
+</body>
+
+{% endblock %} -->
+
+
+
+<h1>All recipes by {{person}}</h1>
+
+<!-- 
+    <img src='{{person.get_random_image}}' style='width:200'>
+-->
+
+All Recipes by this person
+<ul>
+{% for recipe in Person.get_all_recipes %}
+<li>{{recipe}}</li>
+
+{% endfor %}
+</ul> 

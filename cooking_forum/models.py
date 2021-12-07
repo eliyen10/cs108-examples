@@ -20,6 +20,18 @@ class Person(models.Model):
 
         return random.choice(images)
 
+    def get_all_recipes(self):
+        '''Return all quotes for this Person.'''
+
+        # use the object manager to filter Quotes by this person's pk:
+        return Recipe.objects.filter(person=self)
+
+    def get_all_images(self):
+        '''Return all images for this Person.'''
+
+        # use the object manager to filter Image by this person's pk:
+        return Image.objects.filter(person=self)
+
 
 class Recipe(models.Model):
     '''shows the users and a recipe that they've created'''
