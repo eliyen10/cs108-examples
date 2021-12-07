@@ -45,7 +45,7 @@ class UpdateRecipeView(UpdateView):
     form_class = UpdateRecipeForm
     template_name = "cooking_forum/update_recipe_form.html"
 
-class PersonPageView(ListView):
+class PersonPageView(DetailView):
     '''Shows list of recipes for a person'''
     model = Person
     template_name = "cooking_forum/person.html"
