@@ -2,7 +2,7 @@
 {% extends 'cooking_forum/base.html' %}
 
 {% block content %}
-
+<body background="https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png">
 <h1>Show all Recipes</h1>
 
 <ul>
@@ -18,10 +18,12 @@
      
 
     
-    <td>{{recipe.ingredients}}</td>
+    <td style="color: gray;">{{recipe.ingredients}}</td>
     </tr>
     </table>    
     {% endfor %}
 </ul>
+
+</body>
 
 {% endblock %}
