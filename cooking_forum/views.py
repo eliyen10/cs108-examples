@@ -1,5 +1,5 @@
 from django.views.generic.edit import UpdateView
-from cooking_forum.forms import CreateRecipeForm
+from cooking_forum.forms import *
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from .models import Recipe, Person
@@ -56,3 +56,15 @@ class UserPageView(ListView):
     model = Person
     template_name = "cooking_forum/person_list.html"
     context_object_name = "persons"
+
+class CreateUserView(CreateView):
+    '''Add a new recipe to the database through a form'''
+    model = Person
+    form_class = CreateUserForm
+    template_name = "cooking_forum/create_user_form.html"
+
+class CreateCommentView(CreateView):
+    '''Add a comment to a recipe'''
+    model = Comment
+    form_class = CreateCommentForm
+    template_name = "cooking_forum/create_comment_form.html"

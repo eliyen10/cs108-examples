@@ -32,6 +32,11 @@ class Person(models.Model):
         # use the object manager to filter Image by this person's pk:
         return Image.objects.filter(person=self)
 
+    def get_absolute_url(self):
+        '''provide a URL to show in this object'''
+
+        return reverse('person_list')
+
 
 class Recipe(models.Model):
     '''shows the users and a recipe that they've created'''
@@ -61,3 +66,12 @@ class Image(models.Model):
 
         return self.image_url
 
+class Comment(models.Model):
+    '''Add a comment to a recipe'''
+    
+    person = models.ForeignKey(Person, on_delete=models.CASCADE)
+    recipe_comment = models.TextField(blank=True)
+
+    def __str__(self):
+        
+        return f"{self.recipe_comment} - {self.person}"

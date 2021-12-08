@@ -9,6 +9,8 @@ urlpatterns = [
 
     path('recipe/<int:pk>', RecipePageView.as_view(), name='recipe'),
     path('create_recipe', CreateRecipeView.as_view(), name='create_recipe'), 
+    path('create_user', CreateUserView.as_view(), name='create_user'), 
+    path('create_comment', CreateCommentView.as_view(), name='create_comment'), 
     path('recipe/<int:pk>/update', UpdateRecipeView.as_view(), name='update_recipe'),
 
 ]

@@ -15,12 +15,12 @@
         <img src="{{recipe.image_url}}" style="max-width: 400;">
     </li>
     </td>
-    <td></td> 
-
+    <a href="{% url 'create_comment' %}">Add a Comment</a> 
     
     <td style="color: gray;width: 10cm;"><h4>{{recipe.ingredients}}</h4></td>
     </tr>
     </table>    
+
     {% endfor %}
 </ul>
 
