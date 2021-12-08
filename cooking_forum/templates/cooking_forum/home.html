@@ -19,7 +19,17 @@
     
     <td style="color: gray;width: 10cm;"><h4>{{recipe.ingredients}}</h4></td>
     </tr>
-    </table>    
+    </table>   
+   
+    
+
+    {% for comment in recipe.get_all_comments %}
+    <center>
+    {{comment.recipe_comment}}
+    </center>
+
+
+    {% endfor %}
 
     {% endfor %}
 </ul>

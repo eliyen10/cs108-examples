@@ -6,3 +6,4 @@ from .models import *
 admin.site.register(Recipe)
 admin.site.register(Person)
 admin.site.register(Image)
+admin.site.register(Comment)

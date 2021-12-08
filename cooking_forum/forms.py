@@ -26,6 +26,7 @@ class CreateUserForm(forms.ModelForm):
 
 class CreateCommentForm(forms.ModelForm):
     '''A form to add a comment to a recipe'''
+
     class Meta:
         model = Comment
-        fields = ['person', 'recipe_comment'] 
+        fields = ['person', 'recipe_comment', 'recipe'] 

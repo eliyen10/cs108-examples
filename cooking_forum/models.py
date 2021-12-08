@@ -26,6 +26,12 @@ class Person(models.Model):
         # use the object manager to filter Quotes by this person's pk:
         return Recipe.objects.filter(person=self)
 
+    def get_all_comments(self):
+        '''Return all quotes for this Person.'''
+
+        # use the object manager to filter Quotes by this person's pk:
+        return Comment.objects.filter(recipe_comment=self)
+
     def get_all_images(self):
         '''Return all images for this Person.'''
 
@@ -48,7 +54,7 @@ class Recipe(models.Model):
 
     def __str__(self):
         
-        return f"{self.recipe_name} - {self.ingredients} - {self.person}"
+        return f"{self.recipe_name}"
 
     def get_absolute_url(self):
         '''provide a URL to show in this object'''
@@ -71,7 +77,14 @@ class Comment(models.Model):
     
     person = models.ForeignKey(Person, on_delete=models.CASCADE)
     recipe_comment = models.TextField(blank=True)
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
+
 
     def __str__(self):
         
-        return f"{self.recipe_comment} - {self.person}"
+        return f"{self.recipe_comment} - {self.person} "
+
+    def get_absolute_url(self):
+        '''provide a URL to show in this object'''
+
+        return reverse('all_recipes')
