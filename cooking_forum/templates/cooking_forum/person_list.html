@@ -1,5 +1,12 @@
-{% for person in persons% }
+{% extends 'cooking_forum/base.html' %}
 
-<a href="{% person 'person' person.pk %}">{{person}}</a>
+{% block content %}
 
+
+{% for person in persons %}
+<ul>
+<a href="{% url 'person' person.pk %}">{{person}}</a><br>
+</ul>
 {% endfor %}
+
+{% endblock %}

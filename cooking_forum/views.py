@@ -50,3 +50,9 @@ class PersonPageView(DetailView):
     model = Person
     template_name = "cooking_forum/person.html"
     context_object_name = "person"
+
+class UserPageView(ListView):
+    '''Shows a list of Users'''
+    model = Person
+    template_name = "cooking_forum/person_list.html"
+    context_object_name = "persons"

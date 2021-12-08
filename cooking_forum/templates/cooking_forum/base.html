@@ -3,15 +3,24 @@
     <head>
         <title>Quote Application</title>
     </head>
-    <body>
     <header>
-        <!-- <a href="{% url 'random' %}">Random Quote</a> |  -->
-        <a href="{% url 'all_recipes' %}">Show All Recipes</a> |
-        <a href="{% url 'create_recipe' %}">Create New Recipe</a> |
-        <a href="{% url 'random' %}">Recipe of The Day</a> |
+        <div style="background-color:gray">
+    
+            <!-- <a href="{% url 'random' %}">Random Quote</a> |  -->
+            <a href="{% url 'all_recipes' %}">Show All Recipes</a> |
+            <a href="{% url 'create_recipe' %}">Create New Recipe</a> |
+            <a href="{% url 'random' %}">Recipe of The Day</a> |
+            <a href="{% url 'person_list' %}">List of Users</a> |
+            <hr>
+        </div>
     </header>
-    <hr>
+    <body>
 
+    
+        
+    
+ 
+    
     {% block content %}
     {% endblock %}
     </body>

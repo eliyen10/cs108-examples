@@ -3,22 +3,22 @@
 
 {% block content %}
 <body background="https://t3.ftcdn.net/jpg/01/24/86/78/360_F_124867876_wIbQUsnu1ApZlYxmY8WrkEfMIbj6ZOrL.jpg">
-<h1>Show all Recipes</h1>
+<h1>Showing all Recipes</h1>
 
 <ul>
     {% for recipe in recipes %}
-    <table>
+    <table style="border-spacing: 2cm;">
 
     <tr>  
     <td>
-    <li>"{{recipe.recipe_name}}" - {{recipe.person}}<br>
+    <h3><li>"{{recipe.recipe_name}}" - {{recipe.person}}</h3><br>
         <img src="{{recipe.image_url}}" style="max-width: 400;">
     </li>
     </td>
-     
+    <td></td> 
 
     
-    <td style="color: gray;">{{recipe.ingredients}}</td>
+    <td style="color: gray;width: 10cm;"><h4>{{recipe.ingredients}}</h4></td>
     </tr>
     </table>    
     {% endfor %}

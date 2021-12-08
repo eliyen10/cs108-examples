@@ -1,15 +1,18 @@
 
-
-<p>All recipes by</p>
-<p> {{person}} </p>
+<center>
+<table background="https://wallpaperaccess.com/full/1397755.jpg">
+<p><h1>All recipes by</h1></p>
+<p> <h2>{{person}}</h2> </p>
+</table>
+</center>
 
 {% for recipe in person.get_all_recipes %}
 <center>
     <h1>{{recipe.recipe_name}}</h1>
-    <h1>{{recipe.ingredients}}</h1>
-    <h3>{{recipe.person}}</h3>
+    <h2>Ingredients</h2>
+    <h3>{{recipe.ingredients}}</h3>
     <img src="{{recipe.image_url}}" style="max-width: 400;">
-    <h4><a href="{% url 'update_recipe' recipe.pk %}">Update This Quote</a></h4>
+    <h4><a href="{% url 'update_recipe' recipe.pk %}">Update This Recipe</a></h4>
 </center>
 
 
