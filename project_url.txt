@@ -1,1 +1,1 @@
-https://agile-chamber-48874.herokuapp.com/
+https://agile-chamber-48874.herokuapp.com/cooking_forum
