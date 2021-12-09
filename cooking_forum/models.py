@@ -26,12 +26,6 @@ class Person(models.Model):
         # use the object manager to filter Quotes by this person's pk:
         return Recipe.objects.filter(person=self)
 
-    def get_all_comments(self):
-        '''Return all quotes for this Person.'''
-
-        # use the object manager to filter Quotes by this person's pk:
-        return Comment.objects.filter(recipe_comment=self)
-
     def get_all_images(self):
         '''Return all images for this Person.'''
 
@@ -60,6 +54,12 @@ class Recipe(models.Model):
         '''provide a URL to show in this object'''
 
         return reverse('recipe', kwargs={'pk':self.pk})
+
+    def get_all_comments(self):
+        '''Return all quotes for this Person.'''
+
+        # use the object manager to filter Quotes by this person's pk:
+        return Comment.objects.filter(recipe=self)
 
 class Image(models.Model):
     '''Represent an image, which is associated with a Person.'''

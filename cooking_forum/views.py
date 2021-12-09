@@ -1,9 +1,10 @@
 from django.views.generic.edit import UpdateView
 from cooking_forum.forms import *
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Recipe, Person
 import random
+from django.urls import reverse
 from .forms import CreateRecipeForm, UpdateRecipeForm
 # Create your views here.
 
@@ -68,3 +69,34 @@ class CreateCommentView(CreateView):
     model = Comment
     form_class = CreateCommentForm
     template_name = "cooking_forum/create_comment_form.html"
+
+class SearchView(ListView):
+    '''Home page of the cooking forum'''
+
+    model = Recipe
+    template_name = "cooking_forum/search.html"
+    context_object_name = "recipes"
+
+    def get_queryset(self):
+        '''Return a query set of quote objects'''
+
+        if 'search_recipe' in self.request.GET:
+            search_recipe = self.request.GET['search_recipe']
+
+            return Recipe.objects.filter(recipe_name__contains=search_recipe)
+
+        return None
+
+class DeleteRecipeView(DeleteView):
+    '''Delete an existing recipe'''
+    model = Recipe
+    template_name = "cooking_forum/delete_recipe.html"
+
+    def get_success_url(self):
+        '''return to the origninal pge where you deleted the quote'''
+        
+        pk = self.kwargs.get('pk')
+        recipe = Recipe.objects.filter(pk=pk).first()
+
+        person = recipe.person
+        return reverse('person', kwargs={'pk':person.pk})

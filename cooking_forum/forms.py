@@ -29,4 +29,4 @@ class CreateCommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment
-        fields = ['person', 'recipe_comment', 'recipe'] 
+        fields = ['person', 'recipe_comment', 'recipe'] # 

@@ -5,7 +5,7 @@
 
 {% for person in persons %}
 <ul>
-<a href="{% url 'person' person.pk %}">{{person}}</a><br>
+<h4 style="font-family:Arial, Helvetica, sans-serif;"><a href="{% url 'person' person.pk %}">{{person}}</a></h4><br>
 </ul>
 {% endfor %}
 

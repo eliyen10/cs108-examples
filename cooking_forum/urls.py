@@ -12,5 +12,6 @@ urlpatterns = [
     path('create_user', CreateUserView.as_view(), name='create_user'), 
     path('create_comment', CreateCommentView.as_view(), name='create_comment'), 
     path('recipe/<int:pk>/update', UpdateRecipeView.as_view(), name='update_recipe'),
-
+    path('search/', SearchView.as_view(), name='search'), 
+    path('recipe/<int:pk>/delete', DeleteRecipeView.as_view(), name='delete_recipe'),
 ]
